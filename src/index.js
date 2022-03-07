@@ -38,30 +38,51 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
     "accent-img": "http://localhost:9000/img/accent.png",
   },
 };
-Array.from(document.querySelectorAll("nav a")).forEach((val,ind) => {
+const navAnchors = Array.from(document.querySelectorAll("nav a"));
+navAnchors.forEach((val,ind) => {
   val.class = "italic";
   let navItems = Object.values(siteContent.nav);
   val.innerText = navItems[ind];
 } );
-document.querySelector("#logo-img").src = "../mocks/img/logo.png";
-document.querySelector("h1").innerText = Object.values(siteContent.cta)[0];
-document.querySelector(".cta-text button").innerText=Object.values(siteContent.cta)[1];
-document.querySelector("#cta-img").src = "../mocks/img/cta.png";
-document.querySelectorAll(".text-content h4").forEach( (val,ind) => {
+
+const logoImage = document.querySelector("#logo-img");
+logoImage.src = "../mocks/img/logo.png";
+
+const headlineOne = document.querySelector("h1");
+headlineOne.innerText = Object.values(siteContent.cta)[0];
+
+const butText = document.querySelector(".cta-text button");
+butText.innerText=Object.values(siteContent.cta)[1];
+
+const ctaImage = document.querySelector("#cta-img");
+ctaImage.src = "../mocks/img/cta.png";
+
+const contentHeadlines = document.querySelectorAll(".text-content h4");
+contentHeadlines.forEach( (val,ind) => {
   let navArray = Object.values(siteContent["main-content"]).filter( (val,ind) => ind % 2 === 0);
   val.innerText = navArray[ind];
 } );
-document.querySelectorAll(".text-content p").forEach( (val,ind) => {
+
+const contentPars = document.querySelectorAll(".text-content p");
+contentPars.forEach( (val,ind) => {
   let contentArray = Object.values(siteContent["main-content"]).filter( (val,ind) => ind % 2 === 1);
   val.innerText = contentArray[ind];
 } );
-document.querySelector("#middle-img").src = "../mocks/img/accent.png";
-document.querySelector(".contact h4").innerText = siteContent.contact["contact-h4"];
-Array.from(document.querySelectorAll(".contact p")).forEach( (val,ind) => {
+
+const middleImage = document.querySelector("#middle-img");
+middleImage.src = "../mocks/img/accent.png";
+
+const contactText = document.querySelector(".contact h4");
+contactText.innerText = siteContent.contact["contact-h4"];
+
+const contactInfo = Array.from(document.querySelectorAll(".contact p"));
+contactInfo.forEach( (val,ind) => {
   let contactArray = Object.values(siteContent.contact);
   val.innerText = contactArray[ind + 1];
 } );
-document.querySelector("footer a").class = "bold";
-document.querySelector("footer a").innerText = "Copyright Great Idea! 2021";
+
+const footerAnchor = document.querySelector("footer a");
+footerAnchor.class = "bold";
+footerAnchor.innerText = "Copyright Great Idea! 2021";
 
 console.log('project wired!')
