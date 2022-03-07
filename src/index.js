@@ -38,6 +38,7 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
     "accent-img": "http://localhost:9000/img/accent.png",
   },
 };
+//Note on image locations: my images were inaccessible at the locations listed in the site data JSON simulation thing, so I entered them manually
 const navAnchors = Array.from(document.querySelectorAll("nav a"));
 navAnchors.forEach((val,ind) => {
   val.class = "italic";
