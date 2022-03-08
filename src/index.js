@@ -41,7 +41,7 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 //Note on image locations: my images were inaccessible at the locations listed in the site data JSON simulation thing, so I entered them manually
 const navAnchors = Array.from(document.querySelectorAll("nav a"));
 navAnchors.forEach((val,ind) => {
-  val.class = "italic";
+  val.classList.add('italic');
   let navItems = Object.values(siteContent.nav);
   val.innerText = navItems[ind];
 } );
@@ -83,7 +83,7 @@ contactInfo.forEach( (val,ind) => {
 } );
 
 const footerAnchor = document.querySelector("footer a");
-footerAnchor.class = "bold";
+footerAnchor.classList.add('bold');
 footerAnchor.innerText = "Copyright Great Idea! 2021";
 
 console.log('project wired!')
